@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragments.Footer">
+    tools:context=".fragments.FooterFragment">
 
     <TextView
         android:layout_width="match_parent"
@@ -16,27 +16,30 @@
         android:textSize="17dp" />
 
     <RadioGroup
+        android:id="@+id/radio_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:checkedButton="@+id/five"
         android:orientation="horizontal">
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/five"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="5 secondes"
-            android:layout_margin="8dp"/>
+            android:layout_margin="5dp"/>
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/ten"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="10 secondes"
-            android:layout_margin="8dp"/>
+            android:layout_margin="5dp"/>
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/fifteen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="15 secondes"
-            android:layout_margin="8dp"/>
+            android:layout_margin="5dp"/>
     </RadioGroup>
 
     <Switch

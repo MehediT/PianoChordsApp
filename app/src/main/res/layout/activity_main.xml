@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/header"
-        android:name="com.example.pianochordsapp.fragments.Header"
+        android:name="com.example.pianochordsapp.fragments.HeaderFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/footer"
-        android:name="com.example.pianochordsapp.fragments.Footer"
+        android:name="com.example.pianochordsapp.fragments.FooterFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
@@ -33,7 +33,7 @@
 
     <fragment
         android:id="@+id/chords_part"
-        android:name="com.example.pianochordsapp.fragments.ChordsPart"
+        android:name="com.example.pianochordsapp.fragments.ChordsFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
