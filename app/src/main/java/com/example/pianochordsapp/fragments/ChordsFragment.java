@@ -51,7 +51,6 @@ public class ChordsFragment extends Fragment {
         minor_text.setVisibility(setting.isMinor() ? View.VISIBLE : View.INVISIBLE);
         diese_bemol_text.setVisibility(setting.isBemol_diese() ? View.VISIBLE : View.INVISIBLE);
 
-        // Initialize handler to post messages to the UI thread
         handler = new Handler();
 
         isGameRunning = true;
@@ -61,7 +60,6 @@ public class ChordsFragment extends Fragment {
                 while (isGameRunning) {
                     Log.println(Log.INFO, "Game running", "New chord...");
                     Chord newChord = chordManager.getNewChord();
-
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
@@ -70,7 +68,6 @@ public class ChordsFragment extends Fragment {
                             diese_bemol_text.setText(newChord.isSharp() ? "#" : newChord.isFlat() ? "b" : "");
                         }
                     });
-
                     try {
                         Thread.sleep(setting.getDelay());
                     } catch (InterruptedException e) {
@@ -85,9 +82,9 @@ public class ChordsFragment extends Fragment {
 
     public void endGame() {
         isGameRunning = false; // Set flag to stop the game loop
+        gameloop.interrupt();
         chord_text.setVisibility(View.INVISIBLE);
         minor_text.setVisibility(View.INVISIBLE);
         diese_bemol_text.setVisibility(View.INVISIBLE);
-
     }
 }
