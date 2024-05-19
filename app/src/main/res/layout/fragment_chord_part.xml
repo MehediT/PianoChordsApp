@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.ChordsPart">
+    <TextView
+        android:id="@+id/diese_bemol_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="210dp"
+        android:text="#"
+        android:textColor="#49454f"
+        android:textSize="50dp" />
+
+    <TextView
+        android:id="@+id/chord_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="C"
+        android:textColor="#49454f"
+        android:textSize="100dp" />
+
+    <TextView
+        android:id="@+id/minor_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="210dp"
+        android:gravity="center"
+        android:text="m"
+        android:textColor="#49454f"
+        android:textSize="50dp" />
+
+</LinearLayout>

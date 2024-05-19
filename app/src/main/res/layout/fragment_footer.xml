@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.Footer">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delai entre chaque accord:"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:layout_marginBottom="10dp"
+        android:textSize="17dp" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5 secondes"
+            android:layout_margin="8dp"/>
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10 secondes"
+            android:layout_margin="8dp"/>
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15 secondes"
+            android:layout_margin="8dp"/>
+    </RadioGroup>
+
+    <Switch
+        android:id="@+id/minor_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:switchPadding="15dp"
+        android:text="Inclure les accords mineurs"
+        android:textSize="17sp" />
+
+    <Switch
+        android:id="@+id/diese_bemol_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:switchPadding="15dp"
+        android:text="Inclure les accords bémols et dièse"
+        android:textSize="17sp" />
+
+</LinearLayout>
