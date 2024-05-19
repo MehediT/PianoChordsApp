@@ -2,26 +2,26 @@ package com.example.pianochordsapp.entities;
 
 public class Setting {
 
-    public int delay = 5;
-    public boolean bemol_diese = false;
-    public boolean minor = false;
-    public boolean bonus = false;
+    private int delay_milisecond = 5000;
+    private boolean bemol_diese = false;
+    private boolean minor = false;
+    private boolean bonus = false;
 
     public Setting() {
-        this.delay = 5;
+        this.delay_milisecond = 5000;
         this.bemol_diese = false;
         this.minor = false;
         this.bonus = false;
     }
 
-    public Setting(int delay, boolean bemol_diese, boolean minor) {
-        this.delay = delay;
+    public Setting(int delay_milisecond, boolean bemol_diese, boolean minor) {
+        this.delay_milisecond = delay_milisecond;
         this.bemol_diese = bemol_diese;
         this.minor = minor;
         this.bonus = bonus;
     }
-    public Setting(int delay, boolean bemol_diese, boolean minor, boolean bonus) {
-        this.delay = delay;
+    public Setting(int delay_milisecond, boolean bemol_diese, boolean minor, boolean bonus) {
+        this.delay_milisecond = delay_milisecond;
         this.bemol_diese = bemol_diese;
         this.minor = minor;
         this.bonus = bonus;
@@ -29,11 +29,11 @@ public class Setting {
 
 
     public int getDelay() {
-        return delay;
+        return delay_milisecond;
     }
 
-    public void setDelay(int delay) {
-        this.delay = delay;
+    public void setDelay(int delay_milisecond) {
+        this.delay_milisecond = delay_milisecond;
     }
 
     public boolean isBemol_diese() {

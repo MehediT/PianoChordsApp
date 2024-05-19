@@ -68,6 +68,8 @@ public class HeaderFragment extends Fragment {
                 reset.setBackgroundColor(Color.parseColor("#6750a4"));
                 reset.setTextColor(Color.parseColor("#ffffff"));
                 reset.setEnabled(true);
+
+                callbackStart.onStartButtonClicked();
             }
         });
         reset.setOnClickListener(new View.OnClickListener() {
@@ -80,6 +82,7 @@ public class HeaderFragment extends Fragment {
                 start.setBackgroundColor(Color.parseColor("#6750a4"));
                 start.setTextColor(Color.parseColor("#ffffff"));
                 start.setEnabled(true);
+                callbackReset.onResetButtonClicked();
             }
         });
     }

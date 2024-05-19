@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity implements HeaderFragment.On
         ChordsFragment chordsPart = (ChordsFragment) getSupportFragmentManager().findFragmentById(R.id.chords_part);
         if (chordsPart != null) {
             chordsPart.endGame();
-
             FooterFragment footerFragment = (FooterFragment) getSupportFragmentManager().findFragmentById(R.id.footer);
             if (footerFragment != null) {
                 footerFragment.enableControl();

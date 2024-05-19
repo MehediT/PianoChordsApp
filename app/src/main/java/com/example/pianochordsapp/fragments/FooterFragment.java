@@ -67,14 +67,14 @@ public class FooterFragment extends Fragment {
             setting = new Setting();
 
         if(radio5.isChecked())
-            setting.setDelay(5);
+            setting.setDelay(5000);
         else if(radio10.isChecked())
-            setting.setDelay(10);
+            setting.setDelay(10000);
         else
-            setting.setDelay(15);
+            setting.setDelay(15000);
 
         setting.setMinor(minor.isChecked());
-        setting.setMinor(diese_bemol.isChecked());
+        setting.setBemol_diese(diese_bemol.isChecked());
 
         return setting;
     }
