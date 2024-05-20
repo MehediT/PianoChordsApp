@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.pianochordsapp.R;
@@ -24,6 +25,7 @@ import com.example.pianochordsapp.entities.Setting;
 public class ChordsFragment extends Fragment {
 
     Thread gameloop;
+    Thread chrono;
 
     TextView diese_bemol_text;
     TextView chord_text;
@@ -31,6 +33,7 @@ public class ChordsFragment extends Fragment {
     TextView reset;
     private boolean isGameRunning;
     private Handler handler;
+    private ProgressBar progessBar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,6 +43,7 @@ public class ChordsFragment extends Fragment {
         diese_bemol_text = result.findViewById(R.id.diese_bemol_text);
         chord_text = result.findViewById(R.id.chord_text);
         minor_text = result.findViewById(R.id.minor_text);
+        progessBar = result.findViewById(R.id.progressBar);
 
         return result;
     }
@@ -50,7 +54,9 @@ public class ChordsFragment extends Fragment {
         chord_text.setVisibility(View.VISIBLE);
         minor_text.setVisibility(setting.isMinor() ? View.VISIBLE : View.INVISIBLE);
         diese_bemol_text.setVisibility(setting.isBemol_diese() ? View.VISIBLE : View.INVISIBLE);
+        progessBar.setVisibility(View.VISIBLE);
 
+        progessBar.setMax(setting.getDelay());
         handler = new Handler();
 
         isGameRunning = true;
@@ -60,6 +66,7 @@ public class ChordsFragment extends Fragment {
                 while (isGameRunning) {
                     Log.println(Log.INFO, "Game running", "New chord...");
                     Chord newChord = chordManager.getNewChord();
+                    progessBar.setProgress(setting.getDelay());
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
@@ -68,8 +75,10 @@ public class ChordsFragment extends Fragment {
                             diese_bemol_text.setText(newChord.isSharp() ? "#" : newChord.isFlat() ? "b" : "");
                         }
                     });
+                    chrono = startProgressBar();
                     try {
                         Thread.sleep(setting.getDelay());
+                        chrono.interrupt();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -80,11 +89,33 @@ public class ChordsFragment extends Fragment {
         gameloop.start();
     }
 
+    public Thread startProgressBar()
+    {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    while (progessBar.getProgress() > 0) {
+                        progessBar.setProgress(progessBar.getProgress()-progessBar.getMax()/300);
+                        Log.println(Log.INFO, "cmpt", "progress "+progessBar.getProgress());
+                        Thread.sleep(progessBar.getMax()/300);
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        thread.start();
+        return thread;
+    }
     public void endGame() {
         isGameRunning = false; // Set flag to stop the game loop
         gameloop.interrupt();
+        chrono.interrupt();
         chord_text.setVisibility(View.INVISIBLE);
         minor_text.setVisibility(View.INVISIBLE);
         diese_bemol_text.setVisibility(View.INVISIBLE);
+        progessBar.setVisibility(View.INVISIBLE);
     }
 }
