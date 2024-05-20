@@ -5,26 +5,26 @@ public class Setting {
     private int delay_milisecond = 5000;
     private boolean bemol_diese = false;
     private boolean minor = false;
-    private boolean bonus = false;
+    private boolean french_mode = false;
 
     public Setting() {
         this.delay_milisecond = 5000;
         this.bemol_diese = false;
         this.minor = false;
-        this.bonus = false;
+        this.french_mode = false;
     }
 
     public Setting(int delay_milisecond, boolean bemol_diese, boolean minor) {
         this.delay_milisecond = delay_milisecond;
         this.bemol_diese = bemol_diese;
         this.minor = minor;
-        this.bonus = bonus;
+        this.french_mode = french_mode;
     }
     public Setting(int delay_milisecond, boolean bemol_diese, boolean minor, boolean bonus) {
         this.delay_milisecond = delay_milisecond;
         this.bemol_diese = bemol_diese;
         this.minor = minor;
-        this.bonus = bonus;
+        this.french_mode = bonus;
     }
 
 
@@ -52,11 +52,11 @@ public class Setting {
         this.minor = minor;
     }
 
-    public boolean isBonus() {
-        return bonus;
+    public boolean isFrench_mode() {
+        return french_mode;
     }
 
-    public void setBonus(boolean bonus) {
-        this.bonus = bonus;
+    public void setFrench_mode(boolean french_mode) {
+        this.french_mode = french_mode;
     }
 }

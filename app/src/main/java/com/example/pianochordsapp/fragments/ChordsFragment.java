@@ -70,7 +70,10 @@ public class ChordsFragment extends Fragment {
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-                            chord_text.setText(newChord.getValue());
+                            if(setting.isFrench_mode())
+                                chord_text.setText(newChord.getFrenchValue());
+                            else
+                                chord_text.setText(newChord.getValue());
                             minor_text.setText(newChord.isMinor() ? "m" : "");
                             diese_bemol_text.setText(newChord.isSharp() ? "#" : newChord.isFlat() ? "b" : "");
                         }
