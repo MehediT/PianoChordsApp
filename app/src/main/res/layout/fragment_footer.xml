@@ -59,6 +59,7 @@
         android:switchPadding="15dp"
         android:text="Inclure les accords bémols et dièse"
         android:textSize="17sp" />
+
     <Switch
         android:id="@+id/french_mode_switch"
         android:layout_width="wrap_content"

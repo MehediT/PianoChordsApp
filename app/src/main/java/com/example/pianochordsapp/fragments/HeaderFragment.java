@@ -61,12 +61,13 @@ public class HeaderFragment extends Fragment {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                start.setBackgroundColor(Color.parseColor("#e2dfe3"));
-                start.setTextColor(Color.parseColor("#98959b"));
+                ;
+                start.setBackgroundColor(getResources().getColor(R.color.grey));
+                start.setBackgroundColor(getResources().getColor(R.color.grey));
                 start.setEnabled(false);
 
-                reset.setBackgroundColor(Color.parseColor("#6750a4"));
-                reset.setTextColor(Color.parseColor("#ffffff"));
+                reset.setBackgroundColor(getResources().getColor(R.color.purple));
+                reset.setTextColor(getResources().getColor(R.color.white));
                 reset.setEnabled(true);
 
                 callbackStart.onStartButtonClicked();
@@ -75,12 +76,12 @@ public class HeaderFragment extends Fragment {
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                reset.setBackgroundColor(Color.parseColor("#e2dfe3"));
-                reset.setTextColor(Color.parseColor("#98959b"));
+                reset.setBackgroundColor(getResources().getColor(R.color.grey));
+                reset.setBackgroundColor(getResources().getColor(R.color.grey));
                 reset.setEnabled(false);
 
-                start.setBackgroundColor(Color.parseColor("#6750a4"));
-                start.setTextColor(Color.parseColor("#ffffff"));
+                start.setBackgroundColor(getResources().getColor(R.color.purple));
+                start.setTextColor(getResources().getColor(R.color.white));
                 start.setEnabled(true);
                 callbackReset.onResetButtonClicked();
             }

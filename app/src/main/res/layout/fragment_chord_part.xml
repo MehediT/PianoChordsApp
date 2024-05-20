@@ -13,8 +13,6 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/progressBar"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true"
         android:visibility="invisible"
         android:max="100"
         android:layout_marginBottom="75dp"
@@ -27,8 +25,7 @@
         android:layout_marginStart="210dp"
         android:visibility="invisible"
         android:textColor="#49454f"
-        android:textSize="50dp" />
-
+        android:textSize="50sp" />
     <TextView
         android:id="@+id/chord_text"
         android:layout_width="match_parent"
@@ -36,7 +33,7 @@
         android:gravity="center"
         android:visibility="invisible"
         android:textColor="#49454f"
-        android:textSize="100dp" />
+        android:textSize="100sp" />
 
     <TextView
         android:id="@+id/minor_text"
@@ -46,6 +43,6 @@
         android:gravity="center"
         android:visibility="invisible"
         android:textColor="#49454f"
-        android:textSize="50dp" />
+        android:textSize="50sp" />
 
 </LinearLayout>
