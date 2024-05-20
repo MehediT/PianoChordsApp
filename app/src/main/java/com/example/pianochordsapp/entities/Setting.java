@@ -3,26 +3,26 @@ package com.example.pianochordsapp.entities;
 public class Setting {
 
     private int delay_milisecond = 5000;
-    private boolean bemol_diese = false;
+    private boolean sharp_flat = false;
     private boolean minor = false;
     private boolean french_mode = false;
 
     public Setting() {
         this.delay_milisecond = 5000;
-        this.bemol_diese = false;
+        this.sharp_flat = false;
         this.minor = false;
         this.french_mode = false;
     }
 
-    public Setting(int delay_milisecond, boolean bemol_diese, boolean minor) {
+    public Setting(int delay_milisecond, boolean sharp_flat, boolean minor) {
         this.delay_milisecond = delay_milisecond;
-        this.bemol_diese = bemol_diese;
+        this.sharp_flat = sharp_flat;
         this.minor = minor;
         this.french_mode = french_mode;
     }
-    public Setting(int delay_milisecond, boolean bemol_diese, boolean minor, boolean bonus) {
+    public Setting(int delay_milisecond, boolean sharp_flat, boolean minor, boolean bonus) {
         this.delay_milisecond = delay_milisecond;
-        this.bemol_diese = bemol_diese;
+        this.sharp_flat = sharp_flat;
         this.minor = minor;
         this.french_mode = bonus;
     }
@@ -36,12 +36,12 @@ public class Setting {
         this.delay_milisecond = delay_milisecond;
     }
 
-    public boolean isBemol_diese() {
-        return bemol_diese;
+    public boolean isSharp_flat() {
+        return sharp_flat;
     }
 
-    public void setBemol_diese(boolean bemol_diese) {
-        this.bemol_diese = bemol_diese;
+    public void setSharp_flat(boolean sharp_flat) {
+        this.sharp_flat = sharp_flat;
     }
 
     public boolean isMinor() {

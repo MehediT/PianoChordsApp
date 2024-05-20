@@ -27,7 +27,7 @@ public class ChordsFragment extends Fragment {
     Thread gameloop;
     Thread chrono;
 
-    TextView diese_bemol_text;
+    TextView sharp_flat_text;
     TextView chord_text;
     TextView minor_text;
     TextView reset;
@@ -40,7 +40,7 @@ public class ChordsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View result = inflater.inflate(R.layout.fragment_chord_part, container, false);
-        diese_bemol_text = result.findViewById(R.id.diese_bemol_text);
+        sharp_flat_text = result.findViewById(R.id.sharp_flat_text);
         chord_text = result.findViewById(R.id.chord_text);
         minor_text = result.findViewById(R.id.minor_text);
         progessBar = result.findViewById(R.id.progressBar);
@@ -53,7 +53,7 @@ public class ChordsFragment extends Fragment {
         ChordManager chordManager = new ChordManager(setting);
         chord_text.setVisibility(View.VISIBLE);
         minor_text.setVisibility(setting.isMinor() ? View.VISIBLE : View.INVISIBLE);
-        diese_bemol_text.setVisibility(setting.isBemol_diese() ? View.VISIBLE : View.INVISIBLE);
+        sharp_flat_text.setVisibility(setting.isSharp_flat() ? View.VISIBLE : View.INVISIBLE);
         progessBar.setVisibility(View.VISIBLE);
 
         progessBar.setMax(setting.getDelay());
@@ -75,7 +75,7 @@ public class ChordsFragment extends Fragment {
                             else
                                 chord_text.setText(newChord.getValue());
                             minor_text.setText(newChord.isMinor() ? "m" : "");
-                            diese_bemol_text.setText(newChord.isSharp() ? "#" : newChord.isFlat() ? "b" : "");
+                            sharp_flat_text.setText(newChord.isSharp() ? "#" : newChord.isFlat() ? "b" : "");
                         }
                     });
                     chrono = startProgressBar();
@@ -118,7 +118,7 @@ public class ChordsFragment extends Fragment {
         chrono.interrupt();
         chord_text.setVisibility(View.INVISIBLE);
         minor_text.setVisibility(View.INVISIBLE);
-        diese_bemol_text.setVisibility(View.INVISIBLE);
+        sharp_flat_text.setVisibility(View.INVISIBLE);
         progessBar.setVisibility(View.INVISIBLE);
     }
 }

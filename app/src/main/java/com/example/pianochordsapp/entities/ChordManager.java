@@ -19,8 +19,8 @@ public class ChordManager {
         Stream<Chord> chords = Arrays.stream(Chord.values());
 
         chords = chords.filter(c -> !c.isMinor() || c.isMinor() == setting.isMinor())
-                        .filter(c -> !c.isFlat() || c.isFlat() == setting.isBemol_diese())
-                        .filter(c -> !c.isSharp() || c.isSharp() == setting.isBemol_diese())
+                        .filter(c -> !c.isFlat() || c.isFlat() == setting.isSharp_flat())
+                        .filter(c -> !c.isSharp() || c.isSharp() == setting.isSharp_flat())
                         .filter(c -> c!=lastChord);
 
         List<Chord> filtred = chords.collect(Collectors.toList());;

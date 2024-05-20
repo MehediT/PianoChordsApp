@@ -28,7 +28,7 @@ public class FooterFragment extends Fragment {
     private RadioButton radio15;
 
     private Switch minor;
-    private Switch diese_bemol;
+    private Switch sharp_flat;
     private Switch french_mode;
 
     public void enableControl() {
@@ -36,7 +36,7 @@ public class FooterFragment extends Fragment {
         radio10.setEnabled(true);
         radio15.setEnabled(true);
         minor.setEnabled(true);
-        diese_bemol.setEnabled(true);
+        sharp_flat.setEnabled(true);
         french_mode.setEnabled(true);
     }
 
@@ -45,7 +45,7 @@ public class FooterFragment extends Fragment {
         radio10.setEnabled(false);
         radio15.setEnabled(false);
         minor.setEnabled(false);
-        diese_bemol.setEnabled(false);
+        sharp_flat.setEnabled(false);
         french_mode.setEnabled(false);
     }
     @Override
@@ -58,7 +58,7 @@ public class FooterFragment extends Fragment {
         radio15 = result.findViewById(R.id.fifteen);
 
         minor = result.findViewById(R.id.minor_switch);
-        diese_bemol = result.findViewById(R.id.diese_bemol_switch);
+        sharp_flat = result.findViewById(R.id.sharp_flat_switch);
         french_mode = result.findViewById(R.id.french_mode_switch);
 
         setting = getSetting();
@@ -78,7 +78,7 @@ public class FooterFragment extends Fragment {
             setting.setDelay(15000);
 
         setting.setMinor(minor.isChecked());
-        setting.setBemol_diese(diese_bemol.isChecked());
+        setting.setSharp_flat(sharp_flat.isChecked());
         setting.setFrench_mode(french_mode.isChecked());
 
         return setting;
