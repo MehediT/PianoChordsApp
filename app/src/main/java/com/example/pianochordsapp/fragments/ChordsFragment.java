@@ -51,15 +51,12 @@ public class ChordsFragment extends Fragment {
     public void startGame(Setting setting) {
         Log.println(Log.INFO, "Start Game", "Game is running...");
         ChordManager chordManager = new ChordManager(setting);
-        chord_text.setVisibility(View.VISIBLE);
-        minor_text.setVisibility(setting.isMinor() ? View.VISIBLE : View.INVISIBLE);
-        sharp_flat_text.setVisibility(setting.isSharp_flat() ? View.VISIBLE : View.INVISIBLE);
-        progessBar.setVisibility(View.VISIBLE);
 
         progessBar.setMax(setting.getDelay());
         handler = new Handler();
 
         isGameRunning = true;
+
         gameloop = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -90,6 +87,10 @@ public class ChordsFragment extends Fragment {
         });
 
         gameloop.start();
+        chord_text.setVisibility(View.VISIBLE);
+        minor_text.setVisibility(setting.isMinor() ? View.VISIBLE : View.INVISIBLE);
+        sharp_flat_text.setVisibility(setting.isSharp_flat() ? View.VISIBLE : View.INVISIBLE);
+        progessBar.setVisibility(View.VISIBLE);
     }
 
     public Thread startProgressBar()
@@ -120,5 +121,9 @@ public class ChordsFragment extends Fragment {
         minor_text.setVisibility(View.INVISIBLE);
         sharp_flat_text.setVisibility(View.INVISIBLE);
         progessBar.setVisibility(View.INVISIBLE);
+
+        chord_text.setText("");
+        minor_text.setText("");
+        sharp_flat_text.setText("");
     }
 }
